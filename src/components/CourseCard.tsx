@@ -1,3 +1,4 @@
+import { Link } from "react-router"
 import { MessageCircle, ShoppingCart } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -13,19 +14,18 @@ const tones = {
 
 export default function CourseCard({ course: c }: { course: Course }) {
   const isWhatsApp = !c.price
-  const linkProps = isWhatsApp ? { target: "_blank", rel: "noreferrer" } : {}
 
   return (
     <Card className="h-full gap-0 overflow-hidden py-0 shadow-sm">
-      <a href={c.href} {...linkProps} className="relative flex h-[260px] items-center justify-center overflow-hidden bg-slate-100/80 p-2">
+      <Link to={`/programa/${c.slug}`} className="relative flex h-[260px] items-center justify-center overflow-hidden bg-slate-100/80 p-2">
         <img src={c.image} alt={c.title} loading="lazy" className="h-full w-full object-contain" />
         <Badge className={cn("absolute left-3 top-3 rounded-full", tones[c.badgeTone])}>{c.badge}</Badge>
-      </a>
+      </Link>
 
       <CardContent className="flex flex-1 flex-col gap-3 p-5">
         <span className="text-sm font-semibold text-brand-slate">{c.category}</span>
         <h3 className="line-clamp-2 min-h-[3.5rem] text-lg font-semibold leading-snug">
-          <a href={c.href} {...linkProps} className="hover:text-brand-coral">{c.title}</a>
+          <Link to={`/programa/${c.slug}`} className="hover:text-brand-coral">{c.title}</Link>
         </h3>
         <div className="mt-auto flex items-start justify-between gap-2 pt-2 text-xs text-muted-foreground">
           {c.meta.map(({ icon: Icon, text }) => (
@@ -40,15 +40,11 @@ export default function CourseCard({ course: c }: { course: Course }) {
         ) : (
           <span className="text-lg font-bold">{c.price}</span>
         )}
-        {isWhatsApp ? (
-          <Button asChild size="sm" className="bg-emerald-600 hover:bg-emerald-700">
-            <a href={c.href} {...linkProps}><MessageCircle /> WhatsApp</a>
-          </Button>
-        ) : (
-          <Button asChild size="sm">
-            <a href={c.href}><ShoppingCart /> Comprar</a>
-          </Button>
-        )}
+        <Button asChild size="sm">
+          <Link to={`/programa/${c.slug}`}>
+            {isWhatsApp ? <><MessageCircle /> Ver detalles</> : <><ShoppingCart /> Ver programa</>}
+          </Link>
+        </Button>
       </CardFooter>
     </Card>
   )

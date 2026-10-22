@@ -81,8 +81,12 @@ export default function Conciliacion() {
           {cursosConciliacion.map((c) => (
             <Card key={c.titulo} className="overflow-hidden border-border/80 bg-white shadow-sm hover:shadow-md transition-shadow">
               <div className="grid gap-8 lg:grid-cols-12 items-center">
-                <div className="lg:col-span-5 h-72 sm:h-96 w-full">
-                  <img src={c.image} alt={c.titulo} className="size-full object-cover" />
+                <div className="lg:col-span-5 flex items-center justify-center bg-slate-100/60 p-4 lg:p-6 min-h-[320px]">
+                  <img
+                    src={c.image}
+                    alt={c.titulo}
+                    className="max-h-[380px] sm:max-h-[440px] w-auto max-w-full rounded-lg object-contain shadow-sm"
+                  />
                 </div>
                 <div className="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between">
                   <div>

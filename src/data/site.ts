@@ -23,7 +23,10 @@ export const heroSlides = [
 
 /* ───────── Cursos / pasantías ───────── */
 export type Course = {
+  id: number
+  slug: string
   title: string
+  description: string
   category: string
   image: string
   badge: string
@@ -40,7 +43,9 @@ const pasantia = (pais: string) =>
 
 export const pasantias: Course[] = [
   {
+    id: 101, slug: "pasantia-argentina",
     title: "Pasantía Internacional en Litigación Oral - Argentina",
+    description: "Programa intensivo de inmersión en el sistema acusatorio argentino con asistencia a audiencias reales en Buenos Aires, talleres de litigación oral y certificación internacional.",
     category: "Pasantía Internacional",
     image: "/Cursos/pasantia_argentina.jpg",
     badge: "Internacional", badgeTone: "red",
@@ -48,7 +53,9 @@ export const pasantias: Course[] = [
     href: pasantia("Argentina"),
   },
   {
+    id: 102, slug: "pasantia-brasil",
     title: "Pasantía Internacional en Derecho y Litigación - Brasil",
+    description: "Experiencia académica internacional en el sistema jurídico brasileño, con visitas a tribunales, conferencias magistrales y networking con profesionales del derecho en Brasil.",
     category: "Pasantía Internacional",
     image: "/Cursos/pasantia_brasil.jpg",
     badge: "Internacional", badgeTone: "red",
@@ -56,7 +63,9 @@ export const pasantias: Course[] = [
     href: pasantia("Brasil"),
   },
   {
+    id: 103, slug: "pasantia-miami",
     title: "Pasantía en Litigación Oral y Sistema Acusatorio - Miami (EE.UU.)",
+    description: "Pasantía de alta especialización en el sistema acusatorio estadounidense con acceso a Cortes Federales en Miami, Florida. Incluye talleres de contraexamen y certificación internacional.",
     category: "Pasantía Internacional",
     image: "/Cursos/pasantia_miami.jpg",
     badge: "Internacional", badgeTone: "red",
@@ -64,7 +73,9 @@ export const pasantias: Course[] = [
     href: pasantia("Miami (EE.UU.)"),
   },
   {
+    id: 104, slug: "formacion-conciliadores-extrajudiciales",
     title: "Curso de Formación y Capacitación de Conciliadores Extrajudiciales",
+    description: "Curso oficial autorizado por el Ministerio de Justicia (R.M. 122-2000-JUS) para la formación de conciliadores extrajudiciales. Incluye materiales, prácticas simuladas y certificación válida para ejercer.",
     category: "Conciliación Extrajudicial",
     image: "/Cursos/conciliacion_2.jpg",
     badge: "Oficial MINJUS", badgeTone: "green",
@@ -76,7 +87,9 @@ export const pasantias: Course[] = [
 
 export const cursos: Course[] = [
   {
+    id: 201, slug: "corrupcion-funcionarios-crimen-organizado",
     title: "Corrupción de Funcionarios, Crimen Organizado y Análisis del Caso",
+    description: "Programa de alta especialización que aborda la dogmática penal, tipología de delitos contra la administración pública, crimen organizado y técnicas de análisis de casos complejos con enfoque en litigación oral.",
     category: "Derecho Penal",
     image: "/Cursos/CFCAL.jpg",
     badge: "En vivo", badgeTone: "navy",
@@ -85,7 +98,9 @@ export const cursos: Course[] = [
     price: "S/ 200.00",
   },
   {
+    id: 202, slug: "conciliacion-extrajudicial-familiar",
     title: "Conciliación Extrajudicial Familiar",
+    description: "Especialización en resolución de conflictos familiares mediante conciliación extrajudicial. Aborda tenencia, alimentos, régimen de visitas y liquidación de sociedad de gananciales con enfoque práctico.",
     category: "Conciliación Extrajudicial",
     image: "/Cursos/conciliacion.jpg",
     badge: "Especialización", badgeTone: "navy",
@@ -94,7 +109,9 @@ export const cursos: Course[] = [
     price: "S/ 300.00",
   },
   {
+    id: 203, slug: "especializacion-arbitraje",
     title: "Curso de Especialización en Arbitraje",
+    description: "Formación especializada en arbitraje nacional e internacional. Comprende el marco normativo, el convenio arbitral, el proceso arbitral, laudos y mecanismos de impugnación desde el Centro APECC.",
     category: "Arbitraje y Conflictos",
     image: "/Cursos/Curso_especializacion.jpg",
     badge: "Especialización", badgeTone: "navy",
@@ -103,7 +120,9 @@ export const cursos: Course[] = [
     price: "S/ 150.00",
   },
   {
+    id: 204, slug: "delitos-libertad-sexual-mineria-corrupcion",
     title: "Delitos Contra la Libertad Sexual, Minería Ilegal y Corrupción",
+    description: "Seminario intensivo de litigación penal que analiza los delitos contra la libertad sexual, la problemática de la minería ilegal y los delitos de corrupción de funcionarios, con jurisprudencia y casos prácticos actuales.",
     category: "Derecho Penal",
     image: "/Cursos/Delitos_Contra_Libertad_smic.jpg",
     badge: "Seminario", badgeTone: "navy",

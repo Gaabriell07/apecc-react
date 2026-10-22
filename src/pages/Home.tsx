@@ -171,7 +171,7 @@ export default function Home() {
         <div className="pb-16 text-center">
           <h2 className="text-3xl font-bold">Empieza a aprender sin límites</h2>
           <p className="mb-5 mt-2">Accede a todos nuestros cursos <strong className="text-brand-coral">gratis</strong> y no pares de aprender.</p>
-          <Button asChild size="lg"><a href="#">Explorar todos los cursos</a></Button>
+          <Button asChild size="lg"><Link to="/cursos-especializados">Explorar todos los cursos</Link></Button>
         </div>
       </section>
     </>
